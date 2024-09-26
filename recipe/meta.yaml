@@ -1,5 +1,5 @@
 {% set name = "airbyte-api" %}
-{% set version = "0.52.0" %}
+{% set version = "0.52.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airbyte-api-{{ version }}.tar.gz
-  sha256: 78a1429d1f61bf58a878c4a18cf16577cf32afa8b197fbd36b6f3d13eb7fd4b0
+  sha256: 9c69dcfb4103958f5d0724f6c20907f7dbd3ea2e7a6971b4ba5da6449740c528
 
 build:
   noarch: python
