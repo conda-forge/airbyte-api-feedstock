@@ -1,5 +1,5 @@
 {% set name = "airbyte-api" %}
-{% set version = "0.52.1" %}
+{% set version = "0.52.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/airbyte-api-{{ version }}.tar.gz
-  sha256: 9c69dcfb4103958f5d0724f6c20907f7dbd3ea2e7a6971b4ba5da6449740c528
+  sha256: 0abd4570083352cad9c23d1f6f59f288aeecca84d85746018d41de9c531aa852
 
 build:
   noarch: python
@@ -16,11 +16,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - certifi >=2023.7.22
     - charset-normalizer >=3.2.0
     - dataclasses-json >=0.6.4
@@ -33,7 +33,7 @@ requirements:
     - requests >=2.31.0
     - six >=1.16.0
     - typing_inspect >=0.9.0
-    - typing-extensions >=4.7.1
+    - typing_extensions >=4.7.1
     - urllib3 >=1.26.18
 
 test:
@@ -42,6 +42,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
